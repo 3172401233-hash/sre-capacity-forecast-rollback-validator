@@ -1,0 +1,16 @@
+{
+  "name": "sre-capacity-forecast-rollback-validator",
+  "version": "1.0.0",
+  "description": "离线验证容量预测可信度与扩容回滚窗口，不调用任何扩容系统",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "capacity-validator": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=24.16.0"
+  }
+}

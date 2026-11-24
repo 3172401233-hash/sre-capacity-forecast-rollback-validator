@@ -1,0 +1,34 @@
+{
+  "now": 10000000,
+  "samples": [
+    { "t": 1000000, "v": 100 },
+    { "t": 2000000, "v": 105 },
+    { "t": 3000000, "v": 98 },
+    { "t": 4000000, "v": 102 },
+    { "t": 5000000, "v": 104 },
+    { "t": 6000000, "v": 101 },
+    { "t": 7000000, "v": 99 },
+    { "t": 8000000, "v": 480 },
+    { "t": 9000000, "v": 520 }
+  ],
+  "anomalyWindows": [
+    { "start": 7500000, "end": 9200000, "reason": "上游重试风暴" }
+  ],
+  "errorMargin": 0.1,
+  "errorThreshold": 0.2,
+  "horizonMs": 3600000,
+  "currentReplicas": 12,
+  "replicaCapacity": 25,
+  "targetUtilization": 0.8,
+  "costPerReplicaPerHour": 2,
+  "rollback": {
+    "scaledUpAt": 9400000,
+    "cooldownMs": 1800000,
+    "scaleDownLatencyMs": 300000,
+    "baselineReplicas": 6,
+    "batchJobs": [
+      { "id": "nightly-etl", "endsAt": 10500000 },
+      { "id": "report-export", "endsAt": 10200000 }
+    ]
+  }
+}
